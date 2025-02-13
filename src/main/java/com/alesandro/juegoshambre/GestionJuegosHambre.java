@@ -57,7 +57,10 @@ public class GestionJuegosHambre {
                         DaoTributo.insertar(tributo, db);
                     }
                 }
-                distrito.getHabitantes().add(habitante);
+                List<Habitante> habitantes = new ArrayList<Habitante>();
+                habitantes.addAll(distrito.getHabitantes());
+                habitantes.add(habitante);
+                distrito.setHabitantes(habitantes);
                 DaoDistrito.insertar(distrito, db);
                 linea = br.readLine();
             }
